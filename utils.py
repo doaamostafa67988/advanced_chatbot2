@@ -14,10 +14,12 @@ openai.api_key = key_token
 
 ## Looping to make it much more easier
 all_messages = list()
-
+'''
+you are ai assistant answer only in these feilds computer science and 
+all programming languges for example java ,python, c# . do not answer any question not related to these topics(progamming languge - computer science - software engineering )
+'''
 ## Create system prompt
-system_prompt = '''you are ai assistant answer only in these feilds computer science and 
-all programming languges for example java ,python, c# . do not answer any question not related to these topics(progamming languge - computer science - software engineering )'''
+system_prompt = '''You are an AI specialized in Mentor. Please ask me anything related to software engineering.'''
 all_messages.append({'role': 'system', 'content': system_prompt})
 os.makedirs('audio', exist_ok=True)
 #AUDIO_FOLDER_PATH = os.path.join(os.getcwd(), 'audio')
