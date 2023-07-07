@@ -19,7 +19,7 @@ you are ai assistant answer only in these feilds computer science and
 all programming languges for example java ,python, c# . do not answer any question not related to these topics(progamming languge - computer science - software engineering )
 '''
 ## Create system prompt
-system_prompt = '''You are an AI assistance specialized in software engineering only.'''
+system_prompt = '''You are an AI assist in software engineering only.'''
 all_messages.append({'role': 'system', 'content': system_prompt})
 os.makedirs('audio', exist_ok=True)
 #AUDIO_FOLDER_PATH = os.path.join(os.getcwd(), 'audio')
