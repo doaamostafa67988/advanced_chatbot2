@@ -17,8 +17,7 @@ all_messages = list()
 
 ## Create system prompt
 system_prompt = '''you are ai assistant answer only in these feilds computer science and 
-all programming languges for example java ,python, c#
- otherwise answer that "sorry, I can help you in computer science feild only " '''
+all programming languges for example java ,python, c# '''
 all_messages.append({'role': 'system', 'content': system_prompt})
 os.makedirs('audio', exist_ok=True)
 #AUDIO_FOLDER_PATH = os.path.join(os.getcwd(), 'audio')
