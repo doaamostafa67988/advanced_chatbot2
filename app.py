@@ -6,38 +6,21 @@ import random
 import os
 app = Flask(__name__)
 CORS(app, resources={r"/": {"origins": ""}})
-prediction=None
-file=None
-def allowed_file(filename):
-    ALLOWED_EXTS = ['mp3']
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTS
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['POST'])
 def home():
-    if request.method == 'POST':
-        if request.form['question']:
+    request.form['question']:
           
-            qu=request.form['question']
-            
-            prediction = custom_chatbot(user_prompt=qu)
-            return render_template('index.html',question=prediction,user_input=qu) 
-        if "file" in request.files:
-
-            uploaded_file = request.files['file']
-            #if uploaded_file and allowed_file(uploaded_file.filename):
-            
-            destination = os.path.join('audio/',uploaded_file.filename)
-            uploaded_file.save(destination)
-                
-            
-
-            file= custom_chatbot(destination=str(uploaded_file.filename))
-            return render_template('index.html',file=file)
+    qu=request.form['question']
+    
+    prediction = custom_chatbot(user_prompt=qu)
+    return render_template('index.html',question=prediction,user_input=qu) 
       
-
+            
 
 
         
