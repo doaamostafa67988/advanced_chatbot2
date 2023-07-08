@@ -13,7 +13,7 @@ def index():
 
 @app.route('/', methods=['POST'])
 def home():
-    request.form['question']:
+   
           
     qu=request.form['question']
     
